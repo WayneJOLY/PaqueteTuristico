@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Viajes_Turisticos
 {
-    internal class CPaquete
+    internal class CPaquete//IComparable<CPaquete>
     {
         public static float impuesto;
-        private uint numero;
+        private uint codigo;
         private string descripcion;
         private float precio;
+        
 
         public CPaquete(uint numero, string descripcion)
         {
-            this.numero = numero;
+            this.codigo = numero;
             this.descripcion = descripcion;
         }
 
         public CPaquete(uint numero, string descripcion, float precio)
         {
-            this.numero = numero;
+            this.codigo = numero;
             this.descripcion = descripcion;
             this.precio = precio;
         }
@@ -37,6 +38,7 @@ namespace Viajes_Turisticos
         }
 
         public float getPrecio() { return this.precio; }
+        public uint getCodigo() {  return this.codigo; }
 
         public float darMontoTotal()
         {
@@ -46,7 +48,17 @@ namespace Viajes_Turisticos
 
         public string mostrarDatos()
         {
-            return "\n Numero del¨Paquete  :"+ this.numero +"\n Descripcion :"+ this.descripcion +"\n Precio :"+ this.precio + "\n Impuesto :"+ CPaquete.impuesto + "\n Precio Final :"+ this.darMontoTotal().ToString();
+            return "\n Numero del¨Paquete  :"+ this.codigo +"\n Descripcion :"+ this.descripcion +"\n Precio :"+ this.precio + "\n Impuesto :"+ CPaquete.impuesto + "\n Precio Final :"+ this.darMontoTotal().ToString();
+        }
+
+        public int CompareTo(CPaquete? other)
+        {
+            if (other != null)
+            {
+                return 1;
+            }
+
+           return precio.CompareTo(other.precio);
         }
     }
 }
