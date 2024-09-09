@@ -24,7 +24,7 @@ namespace Viajes_Turisticos
             Console.WriteLine(" [3] Eliminar un  paquete ");
             Console.WriteLine(" [4] Listar los paquetes paquete ");
 
-            Console.WriteLine(" [5] Agregar un nuevo paquete ");
+            Console.WriteLine(" [5] Ordenar Los paquetes ");
 
             Console.WriteLine(" [6] Agregar un nuevo paquete ");
             return PedirDato("La Opcion elegida");

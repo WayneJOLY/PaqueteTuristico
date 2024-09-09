@@ -52,6 +52,17 @@ namespace Viajes_Turisticos
 
                         Console.ReadLine();
                         break;
+
+                    case 5:
+                        LISTADEpaquetes.Sort();
+
+                        foreach (CPaquete aux in LISTADEpaquetes)
+                        {
+                            Console.WriteLine(aux.mostrarDatos());
+                        }
+
+                        Console.ReadLine();
+                        break;
                 }
 
 
